@@ -26,18 +26,27 @@ app.get('/songs',function(req,res){
 
 app.post('/songs',function(req,res){
 
+var count=0;
+  for(var i=0;i<songs.length;i++){
+    if(songs[i].title!=req.body.title||songs[i].artist!=req.body.artist||songs[i].album!=req.body.album){
+      count++;
 
-
-  if(songs[songs.length-1].title!=req.body.title&&songs[songs.length-1].artist!=req.body.artist&&songs[songs.length-1].album!=req.body.album){
+    }else{
+    res.sendStatus(400);
+    };
+  };
+  if(count==songs.length){
     if(req.body.title!=''&&req.body.artist!=''&&req.body.album!=''){
+      var d=new Date();
+      req.body.date=d;
       songs.push(req.body);
+
+      console.log(req.body);
       res.sendStatus(200);
     }else{
       res.sendStatus(400);
     };
-  }else{
-    res.sendStatus(400);
-  }
+  };
 });
 
 

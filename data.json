@@ -2,11 +2,13 @@
   {
     "title":"hello",
     "artist":"tupac",
-    "album":"whatever"
+    "album":"whatever",
+    "date":"creation"
   },
   {
     "title":"world",
     "artist":"biggy",
-    "album":"whoever"
+    "album":"whoever",
+    "date":"creation"
   }
 ]

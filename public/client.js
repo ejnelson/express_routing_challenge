@@ -21,9 +21,9 @@ function displaySongs(songs){
 
   console.log(songs);
   $('#songs').empty();
-  var d=new Date();
+
   songs.forEach(function(song){
-    $('#songs').append('<li>'+song.title+' by '+song.artist+' from album '+song.album+' added on '+d+'</li>');
+    $('#songs').append('<li>'+song.title+' by '+song.artist+' from album '+song.album+' added on '+song.date+'</li>');
   });
 }
 
